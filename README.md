@@ -172,6 +172,20 @@ Video examples coming soon. See [examples/videos/](examples/videos/) for details
 
 ---
 
+## Examples
+
+See the [examples/](examples/) directory for complete before/after comparisons.
+
+### Image Examples
+- [examples/images/](examples/images/) - 12 model comparison images
+- All models: Generative Portrait, Generative Enhance, Face Clear 2x/4x, Face Natural 2x/4x, General Enhance 2x/4x, High Fidelity 2x/4x, Sharp Denoise, Detail Denoise
+
+### Video Examples
+- [examples/videos/](examples/videos/) - 6 model comparison videos
+- All models: Ultra HD, General Restore (2 videos), Portrait Restore, Face Soft, Generative Video
+
+---
+
 ## Documentation
 
 - [API Documentation](https://developer.hitpaw.com/)
