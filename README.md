@@ -150,6 +150,28 @@ Our video processing services provide industrial-grade solutions for restoring a
 
 ---
 
+## Examples
+
+### Image Enhancement
+
+#### General Enhancement (general_2x)
+
+| Before | After |
+|--------|-------|
+| ![Before](examples/images/image-official-before.jpg) | ![After](examples/images/image-official-after.jpg) |
+
+#### Face Restoration (face_v2_2x)
+
+| Before | After |
+|--------|-------|
+| ![Before](examples/images/unblur-official-before.jpg) | ![After](examples/images/unblur-official-after.jpg) |
+
+### Video Enhancement
+
+Video examples coming soon. See [examples/videos/](examples/videos/) for details.
+
+---
+
 ## Documentation
 
 - [API Documentation](https://developer.hitpaw.com/)
