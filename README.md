@@ -139,17 +139,6 @@ Our video processing services provide industrial-grade solutions for restoring a
 
 ---
 
-## Coin Pricing
-
-| Operation | Coins |
-|-----------|-------|
-| Image 2x/4x upscale | ~75 |
-| Image 1x denoise | ~50 |
-| Generative image | ~100+ |
-| Video upscale | Varies |
-
----
-
 ## Examples
 
 ### Image Enhancement Examples (12 Models)
