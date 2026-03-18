@@ -14,44 +14,197 @@ from typing import Optional, Dict, Any, List, Tuple
 from enum import Enum
 
 
+# ==================== Image Models ====================
+
 class ImageModel(str, Enum):
-    """Available image enhancement models"""
-    # Face enhancement
-    FACE_2X = "face_2x"
-    FACE_4X = "face_4x"
-    FACE_V2_2X = "face_v2_2x"
-    FACE_V2_4X = "face_v2_4x"
+    """
+    Available image enhancement models
     
-    # General enhancement
+    Standard Models (Fidelity & Accuracy):
+    - General Enhance: Go-to for general upscaling
+    - High Fidelity: For high-quality source preservation
+    - Portrait Clear: Beauty + clarity balance
+    - Portrait Natural: Realistic skin texture
+    - Sharp/Detail Denoise: Noise removal
+    
+    Generative Models (Creativity & Reconstruction):
+    - Diffusion-based for severely degraded images
+    """
+    
+    # === Standard Models ===
+    
+    # General Enhancement
     GENERAL_2X = "general_2x"
     GENERAL_4X = "general_4x"
+    
+    # High Fidelity (for high-quality sources)
     HIGH_FIDELITY_2X = "high_fidelity_2x"
     HIGH_FIDELITY_4X = "high_fidelity_4x"
     
-    # Denoise (1x - maintains original resolution)
+    # Portrait - Clear (beauty + sharp background)
+    FACE_2X = "face_2x"
+    FACE_4X = "face_4x"
+    
+    # Portrait - Natural (realistic texture)
+    FACE_V2_2X = "face_v2_2x"
+    FACE_V2_4X = "face_v2_4x"
+    
+    # Denoise (1x - no upscale)
     SHARPEN_DENOISE_1X = "sharpen_denoise_1x"
     DETAIL_DENOISE_1X = "detail_denoise_1x"
     
-    # Generative models
+    # === Generative Models ===
+    
+    # Generative Portrait (for human subjects)
     GENERATIVE_PORTRAIT_1X = "generative_portrait_1x"
     GENERATIVE_PORTRAIT_2X = "generative_portrait_2x"
     GENERATIVE_PORTRAIT_4X = "generative_portrait_4x"
+    
+    # Generative Enhance (for general content)
     GENERATIVE_1X = "generative_1x"
     GENERATIVE_2X = "generative_2x"
     GENERATIVE_4X = "generative_4x"
 
 
+class ImageModelCategory:
+    """Helper class to categorize image models"""
+    
+    # Upscale Models
+    UPSCALE = [
+        ImageModel.GENERAL_2X, ImageModel.GENERAL_4X,
+        ImageModel.HIGH_FIDELITY_2X, ImageModel.HIGH_FIDELITY_4X,
+    ]
+    
+    # Portrait Models
+    PORTRAIT_CLEAR = [ImageModel.FACE_2X, ImageModel.FACE_4X]
+    PORTRAIT_NATURAL = [ImageModel.FACE_V2_2X, ImageModel.FACE_V2_4X]
+    PORTRAIT = PORTRAIT_CLEAR + PORTRAIT_NATURAL
+    
+    # Denoise Models (1x)
+    DENOISE = [ImageModel.SHARPEN_DENOISE_1X, ImageModel.DETAIL_DENOISE_1X]
+    
+    # Generative Models
+    GENERATIVE_PORTRAIT = [
+        ImageModel.GENERATIVE_PORTRAIT_1X, 
+        ImageModel.GENERATIVE_PORTRAIT_2X, 
+        ImageModel.GENERATIVE_PORTRAIT_4X
+    ]
+    GENERATIVE = [
+        ImageModel.GENERATIVE_1X,
+        ImageModel.GENERATIVE_2X, 
+        ImageModel.GENERATIVE_4X
+    ]
+    GENERATIVE_ALL = GENERATIVE_PORTRAIT + GENERATIVE
+    
+    @classmethod
+    def get_description(cls, model: ImageModel) -> str:
+        """Get model description"""
+        descriptions = {
+            # General
+            ImageModel.GENERAL_2X: "General Enhance 2x - Go-to solution for 2x upscaling in general scenarios",
+            ImageModel.GENERAL_4X: "General Enhance 4x - Go-to solution for 4x upscaling in general scenarios",
+            ImageModel.HIGH_FIDELITY_2X: "High Fidelity 2x - Preserve original artistic intent and fine textures",
+            ImageModel.HIGH_FIDELITY_4X: "High Fidelity 4x - Preserve original artistic intent and fine textures",
+            
+            # Portrait Clear
+            ImageModel.FACE_2X: "Portrait Clear 2x - Beautify faces while sharpening background",
+            ImageModel.FACE_4X: "Portrait Clear 4x - Beautify faces while sharpening background",
+            
+            # Portrait Natural
+            ImageModel.FACE_V2_2X: "Portrait Natural 2x - Realistic skin texture recovery",
+            ImageModel.FACE_V2_4X: "Portrait Natural 4x - Realistic skin texture recovery",
+            
+            # Denoise
+            ImageModel.SHARPEN_DENOISE_1X: "Sharp Denoise 1x - Aggressively remove noise while sharpening",
+            ImageModel.DETAIL_DENOISE_1X: "Detail Denoise 1x - Remove noise preserving original texture",
+            
+            # Generative Portrait
+            ImageModel.GENERATIVE_PORTRAIT_1X: "Generative Portrait 1x - Diffusion-based for human subjects",
+            ImageModel.GENERATIVE_PORTRAIT_2X: "Generative Portrait 2x - Diffusion-based for human subjects",
+            ImageModel.GENERATIVE_PORTRAIT_4X: "Generative Portrait 4x - Diffusion-based for human subjects",
+            
+            # Generative Enhance
+            ImageModel.GENERATIVE_1X: "Generative Enhance 1x - Diffusion for general content",
+            ImageModel.GENERATIVE_2X: "Generative Enhance 2x - Diffusion for general content",
+            ImageModel.GENERATIVE_4X: "Generative Enhance 4x - Diffusion for general content",
+        }
+        return descriptions.get(model, "Unknown model")
+
+
+# ==================== Video Models ====================
+
 class VideoModel(str, Enum):
-    """Available video enhancement models"""
-    FACE_SOFT_2X = "face_soft_2x"
-    PORTRAIT_RESTORE_1X = "portrait_restore_1x"
-    PORTRAIT_RESTORE_2X = "portrait_restore_2x"
+    """
+    Available video enhancement models
+    
+    - Ultra HD: SD/HD to 4K conversion
+    - General Restore: GAN-based restoration
+    - Portrait Restore: Face restoration in video
+    - Face Soft: Face beautification
+    - Generative: Stable Diffusion for video
+    """
+    
+    # === Restoration & Upscale ===
+    
+    # Ultra HD (SD/HD to 4K)
+    ULTRAD_HD_RESTORE_2X = "ultrahd_restore_2x"
+    
+    # General Restoration
     GENERAL_RESTORE_1X = "general_restore_1x"
     GENERAL_RESTORE_2X = "general_restore_2x"
     GENERAL_RESTORE_4X = "general_restore_4x"
-    ULTRAD_HD_RESTORE_2X = "ultrahd_restore_2x"
+    
+    # Portrait Restoration
+    PORTRAIT_RESTORE_1X = "portrait_restore_1x"
+    PORTRAIT_RESTORE_2X = "portrait_restore_2x"
+    
+    # Face Soft (Beautification)
+    FACE_SOFT_2X = "face_soft_2x"
+    
+    # Generative
     GENERATIVE_1X = "generative_1x"
 
+
+class VideoModelCategory:
+    """Helper class to categorize video models"""
+    
+    # Ultra HD
+    ULTRA_HD = [VideoModel.ULTRAD_HD_RESTORE_2X]
+    
+    # General Restoration
+    GENERAL_RESTORE = [
+        VideoModel.GENERAL_RESTORE_1X,
+        VideoModel.GENERAL_RESTORE_2X,
+        VideoModel.GENERAL_RESTORE_4X
+    ]
+    
+    # Portrait
+    PORTRAIT_RESTORE = [
+        VideoModel.PORTRAIT_RESTORE_1X,
+        VideoModel.PORTRAIT_RESTORE_2X
+    ]
+    FACE_SOFT = [VideoModel.FACE_SOFT_2X]
+    
+    # Generative
+    GENERATIVE = [VideoModel.GENERATIVE_1X]
+    
+    @classmethod
+    def get_description(cls, model: VideoModel) -> str:
+        """Get model description"""
+        descriptions = {
+            VideoModel.ULTRAD_HD_RESTORE_2X: "Ultra HD 2x - Convert SD/HD to 4K with deep convolution",
+            VideoModel.GENERAL_RESTORE_1X: "General Restore 1x - GAN-based de-noise and de-blur",
+            VideoModel.GENERAL_RESTORE_2X: "General Restore 2x - GAN-based de-noise and de-blur",
+            VideoModel.GENERAL_RESTORE_4X: "General Restore 4x - GAN-based de-noise and de-blur",
+            VideoModel.PORTRAIT_RESTORE_1X: "Portrait Restore 1x - Multi-frame face restoration",
+            VideoModel.PORTRAIT_RESTORE_2X: "Portrait Restore 2x - Multi-frame face restoration",
+            VideoModel.FACE_SOFT_2X: "Face Soft 2x - Face beautification with identity preservation",
+            VideoModel.GENERATIVE_1X: "Generative 1x - Stable Diffusion for impossible restoration",
+        }
+        return descriptions.get(model, "Unknown model")
+
+
+# ==================== Job Status ====================
 
 class JobStatus(str, Enum):
     """Job status values"""
@@ -59,6 +212,8 @@ class JobStatus(str, Enum):
     COMPLETED = "COMPLETED"
     ERROR = "ERROR"
 
+
+# ==================== Main Client ====================
 
 class HitPawUpscaleAPI:
     """
