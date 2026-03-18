@@ -267,4 +267,4 @@ MIT License
 
 - [Official Website](https://www.hitpaw.com/)
 - [Developer Portal](https://developer.hitpaw.com/)
-- [Purchase API Key](https://www.hitpaw.com/hitpaw-api.html)
+- [Get API Key](https://www.hitpaw.com/hitpaw-api.html)
