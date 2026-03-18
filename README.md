@@ -197,33 +197,35 @@ All comparison images are side-by-side before/after from official documentation.
 
 ### Video Enhancement Examples (6 Models)
 
+*Click on any thumbnail to play the video*
+
 #### 1. Ultra HD Model
-<p><video src="examples/videos/compare_ultra_hd_video_1-b6b76d0f9e4708cc159ab189ed4fdb76.mp4" controls></video></p>
+[![Ultra HD Video](examples/videos/thumbnails/compare_ultra_hd_video_1-b6b76d0f9e4708cc159ab189ed4fdb76.jpg)](examples/videos/compare_ultra_hd_video_1-b6b76d0f9e4708cc159ab189ed4fdb76.mp4)
 
 *Deep convolution for SD/HD to 4K conversion*
 
 #### 2. General Restore Model - Video 1
-<p><video src="examples/videos/compare_general_restore_video_1-d15ab505bba979280715101b44efa195.mp4" controls></video></p>
+[![General Restore Video 1](examples/videos/thumbnails/compare_general_restore_video_1-d15ab505bba979280715101b44efa195.jpg)](examples/videos/compare_general_restore_video_1-d15ab505bba979280715101b44efa195.mp4)
 
 *GAN-based comprehensive restoration*
 
 #### 3. General Restore Model - Video 2
-<p><video src="examples/videos/compare_general_restore_video_2-bad2eb5a1943a58e68a4e7bb27043241.mp4" controls></video></p>
+[![General Restore Video 2](examples/videos/thumbnails/compare_general_restore_video_2-bad2eb5a1943a58e68a4e7bb27043241.jpg)](examples/videos/compare_general_restore_video_2-bad2eb5a1943a58e68a4e7bb27043241.mp4)
 
 *GAN-based comprehensive restoration*
 
 #### 4. Portrait Restore Model
-<p><video src="examples/videos/compare_portrait_restore_video_1-7595194310480db079ea5592bc31dc4b.mp4" controls></video></p>
+[![Portrait Restore Video](examples/videos/thumbnails/compare_portrait_restore_video_1-7595194310480db079ea5592bc31dc4b.jpg)](examples/videos/compare_portrait_restore_video_1-7595194310480db079ea5592bc31dc4b.mp4)
 
 *Multi-frame fusion for face restoration in video*
 
 #### 5. Face Soft Model
-<p><video src="examples/videos/compare_face_soft_video_1-f457b8a318eec9a9f5bbab2c1d063744.mp4" controls></video></p>
+[![Face Soft Video](examples/videos/thumbnails/compare_face_soft_video_1-f457b8a318eec9a9f5bbab2c1d063744.jpg)](examples/videos/compare_face_soft_video_1-f457b8a318eec9a9f5bbab2c1d063744.mp4)
 
 *Face beautification with identity preservation*
 
 #### 6. Generative Video Model
-<p><video src="examples/videos/compare_generative_video_1-5556ee116f4e79c3b6df984ce7f7d6d6.mp4" controls></video></p>
+[![Generative Video](examples/videos/thumbnails/compare_generative_video_1-5556ee116f4e79c3b6df984ce7f7d6d6.jpg)](examples/videos/compare_generative_video_1-5556ee116f4e79c3b6df984ce7f7d6d6.mp4)
 
 *Stable Diffusion reconstruction for impossible restoration tasks*
 
