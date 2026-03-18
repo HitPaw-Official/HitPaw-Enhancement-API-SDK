@@ -152,15 +152,82 @@ Our video processing services provide industrial-grade solutions for restoring a
 
 ## Examples
 
-See the [examples/](examples/) directory for complete before/after comparisons.
+### Image Enhancement Examples (12 Models)
 
-### Image Examples
-- [examples/images/](examples/images/) - 12 model comparison images
-- All models: Generative Portrait, Generative Enhance, Face Clear 2x/4x, Face Natural 2x/4x, General Enhance 2x/4x, High Fidelity 2x/4x, Sharp Denoise, Detail Denoise
+All comparison images are side-by-side before/after from official documentation.
 
-### Video Examples
-- [examples/videos/](examples/videos/) - 6 model comparison videos
-- All models: Ultra HD, General Restore (2 videos), Portrait Restore, Face Soft, Generative Video
+#### 1. Generative Portrait Model
+![Generative Portrait](examples/images/comparison-gen_portrait-61653df3eef130299bdfe4a6da061961.jpg)
+*Diffusion-based for human subjects. Best for extremely low-quality portraits.*
+
+#### 2. Generative Enhance Model
+![Generative Enhance](examples/images/comparison-gen_enhance-4115ed1a146cb79f11a95f33b854c1a3.png)
+*Ideal for heavily compressed or low-resolution general images.*
+
+#### 3. Portrait Model (Clear) - 2x
+![Portrait Clear 2x](examples/images/comparison-face_clear_2x-f9e21f2a144a78df7cd34d86ad141129.png)
+*Beautifies faces while sharpening background. 2x upscale.*
+
+#### 4. Portrait Model (Clear) - 4x
+![Portrait Clear 4x](examples/images/comparison-face_clear_4x-e27f1814341e2d6b19297d49cdb753d7.png)
+*Beautifies faces while sharpening background. 4x upscale.*
+
+#### 5. Portrait Model (Natural) - 2x
+![Portrait Natural 2x](examples/images/comparison-face_natural_2x-6bfa84f5f495981bfbefbe22a9129f50.jpg)
+*Realistic skin texture recovery. 2x upscale.*
+
+#### 6. Portrait Model (Natural) - 4x
+![Portrait Natural 4x](examples/images/comparison-face_natural_4x-c5db0c7d0aa27b11d58d21042783cdf8.jpg)
+*Realistic skin texture recovery. 4x upscale.*
+
+#### 7. General Enhanced Model - 2x
+![General Enhance 2x](examples/images/comparison-general_enhance_2x-f6a3872c4e05e39d7e8bea785629fd4e.png)
+*General-purpose upscaling and enhancement. 2x upscale.*
+
+#### 8. General Enhanced Model - 4x
+![General Enhance 4x](examples/images/comparison-general_enhance_4x-68edf425a90116bf0aed3d082b18e6a1.jpg)
+*General-purpose upscaling. 4x upscale.*
+
+#### 9. High Fidelity Model - 2x
+![High Fidelity 2x](examples/images/comparison-high_fidelity_2x-a740d3ad09e1984d032c27e38bebd197.jpg)
+*Preserves original artistic intent. 2x upscale.*
+
+#### 10. High Fidelity Model - 4x
+![High Fidelity 4x](examples/images/comparison-high_fidelity_4x-a25cb1f57d1da78f36d122e5d4edd344.jpg)
+*Preserves original artistic intent. 4x upscale.*
+
+#### 11. Sharp Denoise Model
+![Sharp Denoise](examples/images/comparison-sharp_denoise-e3b875d26fd4e441f5d45180a4e18294.jpg)
+*Aggressively removes noise while sharpening. 1x (no upscale).*
+
+#### 12. Detail Denoise Model
+![Detail Denoise](examples/images/comparison-detail_denoise-69c3d14241d6a5e73e9b9a1368d013d8.jpg)
+*Removes noise while preserving original texture. 1x (no upscale).*
+
+---
+
+### Video Enhancement Examples (6 Models)
+
+#### 1. Ultra HD Model
+[📹 1080p → 4K upscale](examples/videos/compare_ultra_hd_video_1-b6b76d0f9e4708cc159ab189ed4fdb76.mp4)
+*Deep convolution for SD/HD to 4K conversion*
+
+#### 2. General Restore Model
+[📹 De-noise, de-blur, enhance - Video 1](examples/videos/compare_general_restore_video_1-d15ab505bba979280715101b44efa195.mp4)
+[📹 De-noise, de-blur, enhance - Video 2](examples/videos/compare_general_restore_video_2-bad2eb5a1943a58e68a4e7bb27043241.mp4)
+*GAN-based comprehensive restoration*
+
+#### 3. Portrait Restore Model
+[📹 Multi-frame face restoration](examples/videos/compare_portrait_restore_video_1-7595194310480db079ea5592bc31dc4b.mp4)
+*Face restoration in video*
+
+#### 4. Face Soft Model
+[📹 Face beautification](examples/videos/compare_face_soft_video_1-f457b8a318eec9a9f5bbab2c1d063744.mp4)
+*Face beautification with identity preservation*
+
+#### 5. Generative Video Model
+[📹 Stable Diffusion reconstruction](examples/videos/compare_generative_video_1-5556ee116f4e79c3b6df984ce7f7d6d6.mp4)
+*AI reconstruction for impossible restoration tasks*
 
 ---
 
